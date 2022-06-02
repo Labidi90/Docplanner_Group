@@ -83,6 +83,7 @@ p {
   align-items: center;
   height: 70px;
   background-color: #fff;
+  z-index: 5;
 }
 
 .navbar .logo {
@@ -200,27 +201,38 @@ p {
 
 /*Brands Section*/
 .Brands {
-  display: grid;
-  grid-template-columns: 33% 67%;
-  margin: 0 auto;
+  display: flex;
+  max-width: 1015px;
+  position: relative;
+  margin: 40px 105px 50px;
+  padding: 0 20px;
 }
 
-.Brands ul li h1 {
-  width: 33%;
+.Brands h1 {
+  float: left;
   color: #00b39b;
-  font: 26px "Work Sans", Arial, Sans-serif;
+  font-size: 26px;
+  font-family: "Work Sans", Arial, sans-serif;
+  margin: 6.5px 0 9.1px;
+  padding: 0 26px 0 0;
+  width: 50%;
   font-weight: 300;
   letter-spacing: -0.3px;
 }
 
 .Brands ul {
-  display: flex;
   align-items: center;
-  flex-flow: row;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  width: 67%;
-  margin: 0;
-  padding: 0;
+  font-size: 0;
+  list-style: none;
+  width: 50%;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
 }
 
 .Brands ul li {
@@ -260,55 +272,75 @@ p {
 }
 
 /*Stats Section*/
-/*.Stats {
-  background-color: #e5f1f8;
+.stats {
+  position: relative;
+  margin-top: 24px;
+  background-image: url(https://www.docplanner.com/img/logo.png);
+  background-repeat: no-repeat;
+  background-position: left 250px;
+}
+
+.stats .stats-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  background: #e5faf8;
   background-image: linear-gradient(
     -45deg,
     rgba(0, 204, 177, 0.01) 5%,
     rgba(61, 199, 223, 0.1)
   );
-  overflow: hidden;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  margin: 50px 0 88px;
-  padding: 30px 0 10px;
+  z-index: -1;
 }
 
-.grid {
-  margin: 0 10px;
+.stats .flex {
+  padding: 30px;
 }
 
-.grid header {
-  margin: 32px 0 0;
-  padding: 10px;
-}
-
-.grid h1 {
+.stats h1 {
   font-size: 34px;
-  color: #00b39b;
-  font-family: "Work Sans", Arial, sans-serif;
-  font-weight: 300;
-  letter-spacing: -0.3px;
-  margin: ;
+  line-height: 44.2px;
+  width: 400.5px;
 }
 
-.grid h1:first-child {
-  margin: 0;
+.stats h3 {
+  text-align: center;
+  font-size: 20px;
 }
 
-.grid header p {
-  color: #747474;
-  font-family: "Roboto", Arial, sans-serif;
+.stats p {
   font-size: 14px;
-  margin: 22.4px 90px;
-  font-weight: 400;
-  line-height: 1.7142857143;
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}*/
+  line-height: 24px;
+  text-align: left;
+}
+
+.stats .col-2:first-child p {
+  width: 400.5px;
+}
+
+.stats .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.stats .stats-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: #fff;
+  padding: 2rem;
+  height: 250px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px 0 rgb(0 0 0 / 5%);
+}
+
+.stats .stats-item:nth-child(odd) {
+  transform: translateY(20px);
+}
 
 /*Offices Section*/
 
@@ -426,4 +458,22 @@ p {
   color: #fff;
   font-size: 12px;
   font-family: "Roboto", Arial, sans-serif;
+}
+
+/*Footer*/
+
+footer {
+  color: #ababab;
+  font-size: 12px;
+  font-family: "Roboto", Arial, sans-serif;
+  text-align: center;
+  padding: 16px 0;
+}
+
+footer p {
+  text-align: center;
+}
+
+footer a {
+  color: #3d83df;
 }
